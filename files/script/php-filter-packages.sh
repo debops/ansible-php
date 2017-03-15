@@ -48,10 +48,8 @@ for element in "${search_packages[@]}" ; do
         echo "${element}${php_version}"
 
     # Support for other packages
-    else
-        if [ -n "${element}" ] ; then
-            echo "${element}"
-        fi
+    elif [ -z "${element// }" ] ; then
+        echo "${element}"
     fi
 
 done
